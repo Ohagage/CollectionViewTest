@@ -68,7 +68,7 @@ class FeedCollectionViewController: UIViewController, UICollectionViewDelegateFl
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: fullSize, subitems: [item])
     let layout = NSCollectionLayoutSection(group: group)
 
-    return UICollectionViewCompositionalLayout(section: layout)
+    return UICollectionViewCompositionalLayout(section: layout, configuration: config)
   }
 
   private func setupCollectionView() {
