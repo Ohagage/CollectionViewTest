@@ -1,10 +1,3 @@
-//
-//  FeedCollectionViewController.swift
-//  CollectionViewTest
-//
-//  Created by Omer Hagage on 28/04/2022.
-//
-
 import Foundation
 import UIKit
 
@@ -16,7 +9,7 @@ typealias DataSource = UICollectionViewDiffableDataSource<Section, UIColor>
 
 typealias Snapshot = NSDiffableDataSourceSnapshot<Section, UIColor>
 
-class FeedCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout,
+class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout,
                                     UICollectionViewDataSourcePrefetching {
   private lazy var dataSource: DataSource = makeDataSource()
 
