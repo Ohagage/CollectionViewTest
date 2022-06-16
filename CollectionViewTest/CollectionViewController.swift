@@ -21,7 +21,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
 //    let layout = Self.makeFlowLayout()
     let layout = Self.makeCompositionLayout()
 
-    print("Log: collectionview layout - \(layout.description)")
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.register(
       UICollectionViewCell.self,
@@ -52,6 +51,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
   private static func makeCompositionLayout() -> UICollectionViewLayout {
     let config = UICollectionViewCompositionalLayoutConfiguration()
     config.interSectionSpacing = 0
+    config.scrollDirection = .vertical
 
     let fullSize = NSCollectionLayoutSize(
       widthDimension: .fractionalWidth(1),
@@ -94,7 +94,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
           for: indexPath
         )
 
-        print("Log: configure cell in indexPath - \(indexPath)")
+        print("Log: configure cell at indexPath - \(indexPath)")
         cell.backgroundColor = itemIdentifier
         return cell
     })
@@ -130,6 +130,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
   // MARK: - UICollectionViewDataSourcePrefetching
 
   func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-    print("Log: prefetch cells in indexPaths - \(indexPaths)")
+    print("Log: prefetch cells at indexPaths - \(indexPaths)")
   }
 }
